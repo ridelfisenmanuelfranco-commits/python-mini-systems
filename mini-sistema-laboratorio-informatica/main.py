@@ -1,3 +1,4 @@
+import os
 print('***[ SISTEMA DE GESTION DE LABORATORIO DE INFORMATICA ]***')
 # ==============================================================================================
 #                               SISTEMA DE GESTION DE LABORATORIO DE INFORMATICA
@@ -48,13 +49,11 @@ def mostrar_laboratorios():
     ================================
               LABORATORIOS
     ================================
-    [1] A
-    [2] B
-    [3] C
-    [4] D
-    [5] E
-    [6] F
-    [7] Salir.
+    [1] LAB-A.
+    [2] LAB-B.
+    [3] LAB-C.
+    [4] LAB-D.
+    [5] Salir.
     ================================
     ''')
 
@@ -71,22 +70,24 @@ def obtener_laboratorio():
         except ValueError:
             print('\n[ El dato ingresado es invalido. ]\n')
             continue
+   
+        
+        if opcion == 1:
+            return 'LAB-A'
+        
+        elif opcion == 2:
+            return 'LAB-B'
+        
+        elif opcion == 3:
+            return 'LAB-C'
+        
+        elif opcion == 4:
+            return 'LAB-D'
+        
+        elif opcion == 5:
+            print('\n[ Saliendo de agregar computadora. ]\n')
+            return None
 
-        match(opcion):
-            case 1:
-                return 'A'
-            case 2:
-                return 'B'
-            case 3:
-                return 'C'
-            case 4:
-                return 'D'
-            case 5: 
-                return 'E'
-            case 6:
-                return 'F'
-            case 7:
-                break
 
 # ==============================================================================================
 #                                       OBTENER TEXTO
@@ -109,8 +110,12 @@ def obtener_texto(prompt):
 def crear_codigo_computadora():
     codigo = obtener_codigo()
     laboratorio = obtener_laboratorio()
+    if laboratorio is None:
+        return 
+    
+    codigo_completo = f'{laboratorio}-PC-{codigo}'.upper()
 
-    return f'LAB-{laboratorio}-PC-{codigo}'
+    return codigo_completo
 
 # ==============================================================================================
 #                                       CREAR PC      
@@ -128,30 +133,44 @@ def crear_computadora(codigo, procesador, ram, estado):
 #                                        REGISTRO DE PC   
 # ==============================================================================================
 def registrar_computadora():
+    existe = False
+
+    codigo = crear_codigo_computadora()
+    if codigo is None:
+        return
+    
+    for i, computadora in enumerate(computadoras):
+        if computadora['COdigo'] == codigo:
+            existe = True
+            break
+
+    if existe:
+        return
+    
     procesador = obtener_texto('Ingrese el procesador de la computadora: ')
 
     if procesador is None:
         return 
     
     ram = obtener_texto('Ingrese la capacidad de memoria ram de la computadora: ')
-    if ram in None:
-        return 
-
-    codigo = crear_codigo_computadora()
+    if ram is None:
+        return
+    
+    
 
     computadora = crear_computadora(codigo, procesador, ram, estado ='Disponible')
 
     computadoras.append(computadora)
     print('\n[ Computadora creada correctamente. ]\n')
 
+
 # ==============================================================================================
 #                                        MOSTRAR COMPUTADORA
 # ==============================================================================================
 def mostrar_computadora(i, computadora):
     print(f'''
-    
     ========================================
-    Estacion           ||               {i}
+    Estacion           ||            {i+1}
     ========================================
     Codigo: {computadora['Codigo']}
     Procesador: {computadora['Procesador']}
@@ -160,19 +179,47 @@ def mostrar_computadora(i, computadora):
     ========================================
     ''')
 
-
 # ==============================================================================================
 #                                        MOSTRAR COMPUTADORAS
 # ==============================================================================================
 def mostrar_computadoras():
+
     if computadoras:
         for i, computadora in enumerate(computadoras):
             mostrar_computadora(i, computadora)
-        if (len(computadoras ) > 1):
+
+        if len(computadoras) > 1:
             print(f'\n[ Tenemos: {len(computadoras)} computadoras registradas. ]\n')
 
         else:
             print(f'\n[ Tenemos: {len(computadoras)} computadora registrada. ]\n')
+
     else:
         print('\n[ No hay "Computadoras" registradas. ]\n')
+
+
+# ==============================================================================================
+#                                      BUSCAR POR CODIGO  
+# ==============================================================================================
+def buscar_por_codigo(codigo):
+    for i, computadora in enumerate(computadoras):
+        if computadora['Codigo'] == codigo:
+            print("¡Encontrada!")
+            return i, computadora
+
+    return None, None
+
+# ==============================================================================================
+#                                      BUSCAR COMPUTADORA POR CODIGO 
+# ==============================================================================================
+def buscar_computadora():
+    codigo_computadora_buscada = input('Ingrese el codigo de la computadora buscada: ').strip().upper()
+    i, computadora = buscar_por_codigo(codigo_computadora_buscada)
+
+    if computadora:
+        mostrar_computadora(i, computadora)
+
+    else:
+        print('\n[ Computadora no encontrada. ]\n')
+
 
