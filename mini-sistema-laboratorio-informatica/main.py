@@ -40,3 +40,50 @@ def obtener_codigo():
 
     return codigo_pc
 
+# ==============================================================================================
+#                                   MOSTRAR LABORATORIOS
+# ==============================================================================================
+def mostrar_laboratorios():
+    print('''
+    ================================
+              LABORATORIOS
+    ================================
+    [1] A
+    [2] B
+    [3] C
+    [4] D
+    [5] E
+    [6] F
+    [7] Salir.
+    ================================
+    ''')
+
+
+# ==============================================================================================
+#                                       OBTENER LABORATORIO        
+# ==============================================================================================
+def obtener_laboratorio():
+    while True:
+        mostrar_laboratorios()
+
+        try: 
+            opcion = int(input('Elija un laboratorio: '))
+        except ValueError:
+            print('\n[ El dato ingresado es invalido. ]\n')
+            continue
+
+        match(opcion):
+            case 1:
+                return 'A'
+            case 2:
+                return 'B'
+            case 3:
+                return 'C'
+            case 4:
+                return 'D'
+            case 5: 
+                return 'E'
+            case 6:
+                return 'F'
+            case 7:
+                break
