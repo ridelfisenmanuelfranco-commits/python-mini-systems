@@ -87,3 +87,20 @@ def obtener_laboratorio():
                 return 'F'
             case 7:
                 break
+
+# ==============================================================================================
+#                                       OBTENER TEXTO
+# ==============================================================================================
+def obtener_texto(prompt):
+    while True:
+        dato = input(prompt).strip().title()
+
+        if dato == 'Salir':
+            return None
+
+        if dato == "":
+            print('\n[ El dato ingresado es invalido. ]\n')
+            continue
+
+        return dato
+
