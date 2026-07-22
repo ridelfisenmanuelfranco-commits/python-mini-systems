@@ -104,3 +104,15 @@ def obtener_texto(prompt):
 
         return dato
 
+# ==============================================================================================
+#                                       CREAR PC      
+# ==============================================================================================
+def crear_pc(codigo, procesador, ram, estado):
+    return {
+        'Codigo': codigo,
+        'Procesador': procesador,
+        'Ram': ram,
+        'Estado': estado
+    }
+
+
