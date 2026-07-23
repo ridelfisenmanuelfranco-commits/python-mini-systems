@@ -282,3 +282,15 @@ def mostrar_computadoras_disponibles():
     else:
         print('\n[ NO HAY COMPUTADORAS REGISTRADAS. ]\n')
 
+# ==============================================================================================
+#                                MOSTRAR COMPUTADORAS EN MANTENIMIENTO 
+# ==============================================================================================
+def mostrar_computadoras_mantenimiento():
+    if computadoras:
+        print(f'[\n[ COMPUTADORAS EN MANTENIMIENTO. ]\n]')
+        for i, computadora in enumerate(computadoras):
+            if computadora['Estado'] == 'Mantenimiento':
+                mostrar_computadora(i, computadora)
+    else:
+        print('\n[ NO HAY COMPUTADORAS REGISTRADAS. ]\n')
+
