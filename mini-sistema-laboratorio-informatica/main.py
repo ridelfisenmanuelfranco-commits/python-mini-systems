@@ -103,11 +103,19 @@ def obtener_texto(prompt):
             continue
 
         return dato
+# ==============================================================================================
+#                                 CREAR CODIGO COMPLETO DE LA PC
+# ==============================================================================================
+def crear_codigo_computadora():
+    codigo = obtener_codigo()
+    laboratorio = obtener_laboratorio()
+
+    return f'LAB-{laboratorio}-PC-{codigo}'
 
 # ==============================================================================================
 #                                       CREAR PC      
 # ==============================================================================================
-def crear_pc(codigo, procesador, ram, estado):
+def crear_computadora(codigo, procesador, ram, estado):
     return {
         'Codigo': codigo,
         'Procesador': procesador,
@@ -116,3 +124,22 @@ def crear_pc(codigo, procesador, ram, estado):
     }
 
 
+# ==============================================================================================
+#                                        REGISTRO DE PC   
+# ==============================================================================================
+def registrar_computadora():
+    procesador = obtener_texto('Ingrese el procesador de la computadora: ')
+
+    if procesador is None:
+        return 
+    
+    ram = obtener_texto('Ingrese la capacidad de memoria ram de la computadora: ')
+    if ram in None:
+        return 
+
+    codigo = crear_codigo_computadora()
+
+    computadora = crear_computadora(codigo, procesador, ram, estado ='Disponible')
+
+    computadoras.append(computadora)
+    print('\n[ Computadora creada correctamente. ]\n')
