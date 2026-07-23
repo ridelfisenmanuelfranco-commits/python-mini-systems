@@ -317,3 +317,47 @@ def eliminar_computadora():
     else:
         print('\n[ COMPUTADORA NO ENCONTRADA. ]\n')
 
+# ==============================================================================================
+#                                  MENU PRINCIPAL
+# ==============================================================================================
+while True:
+    mostrar_menu_principal()
+
+    try:
+        opcion = int(input('Elija una opcion: '))
+
+    except ValueError:
+        print('\n[ OPCION INVALIDA. ]\n')
+        continue
+
+    os.system('cls')
+
+    if opcion == 1:
+        registrar_computadora()
+
+    elif opcion == 2:
+        mostrar_computadoras()
+
+    elif opcion == 3:
+        buscar_computadora()
+
+    elif opcion == 4:
+        enviar_computadora_mantenimiento()
+
+    elif opcion == 5:
+        finalizar_mantenimiento()
+
+    elif opcion == 6:
+        mostrar_computadoras_disponibles()
+
+    elif opcion == 7:
+        enviar_computadora_mantenimiento()
+
+    elif opcion == 8:
+        eliminar_computadora()
+
+    elif opcion == 9:
+        print('\n[ SALIENDO DEL SISTEMA. ]\n')
+        break
+    else:
+        print('\n[ OPCION INVALIDA. ELIJA OTRA OPCION. ]\n')
