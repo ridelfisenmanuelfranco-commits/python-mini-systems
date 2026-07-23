@@ -57,7 +57,6 @@ def mostrar_laboratorios():
     ================================
     ''')
 
-
 # ==============================================================================================
 #                                       OBTENER LABORATORIO        
 # ==============================================================================================
@@ -133,6 +132,7 @@ def crear_computadora(codigo, procesador, ram, estado):
 #                                        REGISTRO DE PC   
 # ==============================================================================================
 def registrar_computadora():
+    print(f'[\n[ REGISTRO DE COMPUTADORAS. ]\n]')
     existe = False
 
     codigo = crear_codigo_computadora()
@@ -161,7 +161,7 @@ def registrar_computadora():
     computadora = crear_computadora(codigo, procesador, ram, estado ='Disponible')
 
     computadoras.append(computadora)
-    print('\n[ Computadora creada correctamente. ]\n')
+    print('\n[ COMPUTADORA REGISTRADA CORRECTAMENTA. ]\n')
 
 
 # ==============================================================================================
@@ -185,6 +185,7 @@ def mostrar_computadora(i, computadora):
 def mostrar_computadoras():
 
     if computadoras:
+        print(f'[\n[ LISTA DE COMPUTADORAS. ]\n]')
         for i, computadora in enumerate(computadoras):
             mostrar_computadora(i, computadora)
 
@@ -195,7 +196,7 @@ def mostrar_computadoras():
             print(f'\n[ Tenemos: {len(computadoras)} computadora registrada. ]\n')
 
     else:
-        print('\n[ No hay "Computadoras" registradas. ]\n')
+        print('\n[ NO HAY \'COMPUTADORAS\' REGISTRADAS. ]\n')
 
 
 # ==============================================================================================
@@ -213,11 +214,34 @@ def buscar_por_codigo(codigo):
 #                                      BUSCAR COMPUTADORA POR CODIGO 
 # ==============================================================================================
 def buscar_computadora():
+    print(f'[\n[ BUSCAR COMPUTADORAS. ]\n]')
     codigo_computadora_buscada = input('Ingrese el codigo de la computadora buscada: ').strip().upper()
     i, computadora = buscar_por_codigo(codigo_computadora_buscada)
 
     if computadora:
         mostrar_computadora(i, computadora)
+
+    else:
+        print('\n[ COMPUTADORA NO ENCONTRADA. ]\n')
+
+# ==============================================================================================
+#                                     ENVIAR A MANTENIMIENTO 
+# ==============================================================================================
+def enviar_computadora_mantenimiento():
+    print(f'[\n[ ENVIAR COMPUTADORAS A MANTENIMIENTO. ]\n]')
+    codigo_computadora_buscada = input('Ingrese el codigo de la computadora buscada: ').strip().upper()
+    i, computadora = buscar_por_codigo(codigo_computadora_buscada)
+
+    if computadora:
+        mostrar_computadora(i, computadora)
+
+        enviar_a_mantenimiento = input('Desea enviarla a mantenimiento?: ').strip().lower()
+
+        if enviar_a_mantenimiento == 'si':
+            computadora['Estado'] = "Mantenimiento"
+
+        else:
+            print('\n[ LA COMPUTADORA NO HA SIDO ENVIADA A MANTENIMIENTO. ]\n')
 
     else:
         print('\n[ Computadora no encontrada. ]\n')
