@@ -247,3 +247,26 @@ def enviar_computadora_mantenimiento():
         print('\n[ Computadora no encontrada. ]\n')
 
 
+# ==============================================================================================
+#                                     FINALIZAR MANTENIMIENTO 
+# ==============================================================================================
+def finalizar_mantenimiento():
+    print(f'[\n[ FINALIZACION DE MANTENIMIENTO. ]\n]')
+    codigo_computadora_buscada = input('Ingrese el codigo de la computadora buscada: ').strip().upper()
+    i, computadora = buscar_por_codigo(codigo_computadora_buscada)
+    
+    if computadora:
+        mostrar_computadora(i, computadora)
+    
+        mantenimiento = input('Desea finalizar el mantenimiento?: ').strip().lower()
+    
+        if mantenimiento == 'si':
+            computadora['Estado'] = "Disponible"
+    
+        else:
+            print('\n[ EL MANTENIMIENTO AUN SIGUE EN PROCESO. ]\n')
+    
+    else:
+        print('\n[ COMPUTADORA NO ENCONTRADA. ]\n')
+
+
