@@ -22,9 +22,10 @@ Este repositorio reúne proyectos pequeños pero completos, enfocados en resolve
 
 | Proyecto | Estado |
 |----------|--------|
-| 📚 Sistema de Biblioteca | ✅ Completado |
-| 🐶 Sistema de Mascotas | ✅ Completado |
-| 🎬 Sistema de Películas | ✅ Completado |
+🖥️ Sistema de Gestión de Laboratorio de Informática | ✅ Completado |
+| 📚 Sistema de Biblioteca | ⏳ En desarrollo |
+| 🐶 Sistema de Mascotas | ⏳ En desarrollo |
+| 🎬 Sistema de Películas | ⏳ En desarrollo |
 | 👥 Sistema de Clientes | ⏳ En desarrollo |
 | 📦 Sistema de Productos | ⏳ En desarrollo |
 | 🛒 Sistema de Compras | ⏳ En desarrollo |
