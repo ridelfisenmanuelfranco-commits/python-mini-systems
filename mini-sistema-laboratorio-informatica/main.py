@@ -143,3 +143,36 @@ def registrar_computadora():
 
     computadoras.append(computadora)
     print('\n[ Computadora creada correctamente. ]\n')
+
+# ==============================================================================================
+#                                        MOSTRAR COMPUTADORA
+# ==============================================================================================
+def mostrar_computadora(i, computadora):
+    print(f'''
+    
+    ========================================
+    Estacion           ||               {i}
+    ========================================
+    Codigo: {computadora['Codigo']}
+    Procesador: {computadora['Procesador']}
+    Ram: {computadora['Ram']}
+    Estado: {computadora['Estado']}
+    ========================================
+    ''')
+
+
+# ==============================================================================================
+#                                        MOSTRAR COMPUTADORAS
+# ==============================================================================================
+def mostrar_computadoras():
+    if computadoras:
+        for i, computadora in enumerate(computadoras):
+            mostrar_computadora(i, computadora)
+        if (len(computadoras ) > 1):
+            print(f'\n[ Tenemos: {len(computadoras)} computadoras registradas. ]\n')
+
+        else:
+            print(f'\n[ Tenemos: {len(computadoras)} computadora registrada. ]\n')
+    else:
+        print('\n[ No hay "Computadoras" registradas. ]\n')
+
