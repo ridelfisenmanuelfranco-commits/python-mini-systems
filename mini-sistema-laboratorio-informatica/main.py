@@ -270,3 +270,15 @@ def finalizar_mantenimiento():
         print('\n[ COMPUTADORA NO ENCONTRADA. ]\n')
 
 
+# ==============================================================================================
+#                                     MOSTRAR COMPUTADORAS DISPONIBLES 
+# ==============================================================================================
+def mostrar_computadoras_disponibles():
+    if computadoras:
+        print(f'[\n[ COMPUTADORAS DISPONIBLES. ]\n]')
+        for i, computadora in enumerate(computadoras):
+            if computadora['Estado'] == 'Disponible':
+                mostrar_computadora(i, computadora)
+    else:
+        print('\n[ NO HAY COMPUTADORAS REGISTRADAS. ]\n')
+
