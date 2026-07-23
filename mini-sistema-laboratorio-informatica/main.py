@@ -294,3 +294,26 @@ def mostrar_computadoras_mantenimiento():
     else:
         print('\n[ NO HAY COMPUTADORAS REGISTRADAS. ]\n')
 
+# ==============================================================================================
+#                                  ELIMINAR COMPUTADORA
+# ==============================================================================================
+def eliminar_computadora():
+    print(f'[\n[ ELIMINAR COMPUTADORA. ]\n]')
+    codigo_computadora_buscada = input('Ingrese el codigo de la computadora buscada: ').strip().upper()
+    i, computadora = buscar_por_codigo(codigo_computadora_buscada)
+        
+    if computadora:
+        mostrar_computadora(i, computadora)
+        
+        eliminar = input('Desea eliminar la computadora?: ').strip().lower()
+        
+        if eliminar == 'si':
+           computadoras.remove(computadora)
+           print('\n[ LA COMPUTADORA HA SIDO ELIMANADA CORRECTAMENTE. ]\n')
+        
+        else:
+            print('\n[ LA COMPUTADORA NO HA SIDO ELIMINADA. ]\n')
+        
+    else:
+        print('\n[ COMPUTADORA NO ENCONTRADA. ]\n')
+
