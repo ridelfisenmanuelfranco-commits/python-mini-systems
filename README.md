@@ -23,7 +23,7 @@ Este repositorio reúne proyectos pequeños pero completos, enfocados en resolve
 | Proyecto | Estado |
 |----------|--------|
 🖥️ Sistema de Gestión de Laboratorio de Informática | ✅ Completado |
-| 📚 Sistema de Biblioteca | ⏳ En desarrollo |
+| 📚 Sistema de Biblioteca | ✅ Completado |
 | 🐶 Sistema de Mascotas | ⏳ En desarrollo |
 | 🎬 Sistema de Películas | ⏳ En desarrollo |
 | 👥 Sistema de Clientes | ⏳ En desarrollo |
