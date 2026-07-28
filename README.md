@@ -26,6 +26,7 @@ Este repositorio reúne proyectos pequeños pero completos, enfocados en resolve
 | 📚 Sistema de Biblioteca | ✅ Completado |
 | 👥 Sistema de Clientes | ✅ Completado |
 | 🛒 Sistema de Compras | ✅ Completado |
+| 📄 Sistema de Facturas | ✅ Completado |
 | 🐶 Sistema de Mascotas | ⏳ En desarrollo |
 | 🎬 Sistema de Películas | ⏳ En desarrollo |
 | 📦 Sistema de Productos | ⏳ En desarrollo |
