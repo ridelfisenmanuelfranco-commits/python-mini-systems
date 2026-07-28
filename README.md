@@ -25,10 +25,10 @@ Este repositorio reúne proyectos pequeños pero completos, enfocados en resolve
 🖥️ Sistema de Gestión de Laboratorio de Informática | ✅ Completado |
 | 📚 Sistema de Biblioteca | ✅ Completado |
 | 👥 Sistema de Clientes | ✅ Completado |
+| 🛒 Sistema de Compras | ✅ Completado |
 | 🐶 Sistema de Mascotas | ⏳ En desarrollo |
 | 🎬 Sistema de Películas | ⏳ En desarrollo |
 | 📦 Sistema de Productos | ⏳ En desarrollo |
-| 🛒 Sistema de Compras | ⏳ En desarrollo |
 | 👨‍💼 Sistema de Empleados | ⏳ En desarrollo |
 | 🚚 Sistema de Proveedores | ⏳ En desarrollo |
 | 🏥 Sistema de Citas | ⏳ En desarrollo |
