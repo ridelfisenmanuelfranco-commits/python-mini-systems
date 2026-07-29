@@ -28,8 +28,8 @@ Este repositorio reúne proyectos pequeños pero completos, enfocados en resolve
 | 🛒 Sistema de Compras | ✅ Completado |
 | 📄 Sistema de Facturas | ✅ Completado |
 | 🛍️ Sistema de Pedidos | ✅ Completado |
+| 📦 Sistema de Productos | ✅ Completado |
 | 🐶 Sistema de Mascotas | ⏳ En desarrollo |
-| 📦 Sistema de Productos | ⏳ En desarrollo |
 | 👨‍💼 Sistema de Empleados | ⏳ En desarrollo |
 | 🚚 Sistema de Proveedores | ⏳ En desarrollo |
 | 🏥 Sistema de Citas | ⏳ En desarrollo |
